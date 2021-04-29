@@ -1,9 +1,20 @@
 <h1> List of all directors </h1>
 
-<% @list_of_directors.each do |director| %>
-  <li> 
-    <%= director.name %>,
-    <%= director.dob %>,
-    <%#= director.bio %>
-  </li>
-<% end %>
+<table border="1">
+  <tr> 
+    <td><b> ID </b></td>
+    <td><b> Image </b></td>
+    <td><b> Name </b></td>
+    <td><b> Dob </b></td>
+    <td><b>  </b></td>
+  </tr>
+  <% @list_of_directors.each do |director| %>
+    <tr> 
+      <td><%= director.id %></td>
+      <td> <img src="<%= director.image %>"> </td>
+      <td><%= director.name %></td>
+      <td><%= director.dob %></td>
+      <td><%#= director.bio %></td>
+    </tr>
+  <% end %>
+</table>
