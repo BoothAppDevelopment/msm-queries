@@ -1,3 +1,30 @@
 <h1> Director #<%= @director_id %> details </h1>
 
-<p> <a href ="/directors"> Go back </p>
+<p> <a href ="/directors"> Go back </a> </p>
+
+<hr>
+
+<dl>
+  <dt>Name</dt>
+  <dd><%= @detailed_director.name %> </dd>
+
+  <dt>Dob</dt>
+  <dd><%= @detailed_director.dob %> </dd>
+
+  <dt>Bio</dt>
+  <dd><%= @detailed_director.bio %> </dd>
+
+  <dt>Image </dt>
+  <dd><img src="<%= @detailed_director.image %>"> </dd>
+
+  <dt>Created at</dt>
+  <dd><%= @detailed_director.created_at %></dd>
+
+  <dt>Updated at </dt>
+  <dd><%= @detailed_director.updated_at %></dd>
+
+</dl>
+
+<hr>
+
+<h1>Filmography</h1>

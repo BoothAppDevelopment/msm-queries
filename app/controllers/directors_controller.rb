@@ -9,6 +9,7 @@ class DirectorsController < ApplicationController
 
   def director_detail
     @director_id = params.fetch("director_id")
+    @detailed_director = Director.all.where({ :id => @director_id}).first
 
     render({ :template => "directors_templates/details.html.erb"})
   end
