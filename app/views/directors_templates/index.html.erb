@@ -1,6 +1,7 @@
 <h1> List of all directors </h1>
 
 <table border="1">
+  <!--header row-->
   <tr> 
     <td><b> ID </b></td>
     <td><b> Image </b></td>
@@ -8,6 +9,7 @@
     <td><b> Dob </b></td>
     <td><b>  </b></td>
   </tr>
+
   <% @list_of_directors.each do |director| %>
     <tr> 
       <td><%= director.id %></td>
