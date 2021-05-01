@@ -18,13 +18,36 @@
   <dd><img src="<%= @detailed_director.image %>"> </dd>
 
   <dt>Created at</dt>
-  <dd><%= @detailed_director.created_at %></dd>
+  <dd><%= time_ago_in_words(@detailed_director.created_at) %> ago</dd>
 
   <dt>Updated at </dt>
-  <dd><%= @detailed_director.updated_at %></dd>
+  <dd><%= time_ago_in_words(@detailed_director.updated_at) %> ago</dd>
 
 </dl>
 
 <hr>
 
 <h1>Filmography</h1>
+
+<table border="1">
+  <!--header row-->
+  <tr> 
+    <td><b> ID </b></td>
+    <td><b> Image </b></td>
+    <td><b> Title </b></td>
+    <td><b> Year </b></td>
+    <td><b> Director </b></td>
+    <td><b> </b></td>
+  </tr>
+
+  <% @Filmography.each do |film| %>
+    <tr> 
+      <td><%= film.id %></td>
+      <td> <img src="<%= film.image %>"> </td>
+      <td><%= film.title %></td>
+      <td><%= film.year %></td>
+      <td><%= @detailed_director.name %></td>
+      <td><a href="/movies/<%= film.id %>"> Show details </a></td>
+    </tr>
+  <% end %>
+</table>
