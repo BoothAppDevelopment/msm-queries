@@ -6,4 +6,12 @@ class DirectorsController < ApplicationController
   render({ :template => "directors_templates/index.html.erb"})
   end
 
+
+  def director_detail
+    @director_id = params.fetch("director_id")
+    
+    render({ :template => "directors_templates/details.html.erb"})
+  end
+
+
 end     

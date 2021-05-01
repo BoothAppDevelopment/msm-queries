@@ -16,7 +16,7 @@
       <td> <img src="<%= director.image %>"> </td>
       <td><%= director.name %></td>
       <td><%= director.dob %></td>
-      <td><%#= director.bio %></td>
+      <td><a href="/directors/<%= director.id %>"> Show details </a></td>
     </tr>
   <% end %>
 </table>
