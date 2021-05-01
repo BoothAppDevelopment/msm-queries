@@ -23,4 +23,14 @@ class DirectorsController < ApplicationController
     render({ :template =>"directors_templates/eldest.html.erb"})
   end
 
+
+  def director_youngest
+    @youngest = Director.all.order(:dob).where.not({:dob => nil}).last
+    require "date"
+
+    @youngest_dob = Date.parse(@youngest.dob.to_s)
+
+    render({ :template =>"directors_templates/youngest.html.erb"})
+  end
+
 end     
