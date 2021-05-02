@@ -1,0 +1,30 @@
+<h1> Movie #<%= @film_record.id %> details</h1>
+
+<a href="/movies">Go back</a>
+<hr>
+
+<dl>
+  <dt>Title</dt>
+  <dd><%= @film_record.title %></dd>
+
+  <dt>Year</dt>
+  <dd><%= @film_record.year %></dd>
+
+  <dt>Duration</dt>
+  <dd><%= @film_record.duration %></dd>
+
+  <dt>Description</dt>
+  <dd><%= @film_record.description %></dd>
+
+  <dt>Image</dt>
+  <dd><img src="<%= @film_record.image %>"> </dd>
+
+  <dt>Director</dt>
+  <dd><%= @list_of_directors.where({:id => @film_record.id}).first.name %> </dd>
+
+  <dt>Created at</dt>
+  <dd><%= time_ago_in_words(@film_record.created_at) %> ago</dd>
+
+  <dt>Updated at</dt>
+  <dd><%= time_ago_in_words(@film_record.updated_at) %> ago</dd>
+</dl>

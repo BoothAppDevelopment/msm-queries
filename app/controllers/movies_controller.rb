@@ -8,6 +8,13 @@ def index
 end
 
 
+def details
+  film_id = params.fetch("film_id")
+  @film_record = Movie.all.where({ :id => film_id}).first
+  @list_of_directors = Director.all
+
+  render({ :template => "movies_templates/details.html.erb"})
+end
 
 
 
